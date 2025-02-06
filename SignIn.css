@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #003366, #001a4d); /* Dynamic gradient */
+    font-family: "Baloo Bhai 2", sans-serif;
+    height: 100vh; /* Ensures the body fills the viewport */
+    
+}
+
+/* Form container styling */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: #f9f9f9; /* Softer background for the form */
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px; /* Limit the width */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Card-like shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.form-container:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Form heading styling */
+.form-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #003366; /* Darker shade for contrast */
+}
+
+/* Input field styling */
+.form-container input {
+    margin: 10px 0;
+    height: 6vh;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-container input:focus {
+    border-color: #0066cc; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5); /* Highlighted shadow */
+    outline: none;
+}
+
+/* Error message styling */
+.form-container span {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -5px;
+    display: block;
+}
+
+/* Button styling */
+button {
+    display: block;
+    background: linear-gradient(90deg, #0066cc, #003366); /* Gradient background */
+    color: white;
+    height: 7vh;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #005bb5, #002244); /* Slightly darker gradient */
+    transform: scale(1.05); /* Enlarge button on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+        max-width: 90%; /* Adjust container width */
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem; /* Slightly smaller heading */
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .form-container input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        height: auto;
+        font-size: 0.8rem;
+    }
+}
+/* Label styling */
+.form-container label {
+    display: block; /* Ensures labels appear on their own line */
+    margin-bottom: 5px; /* Space between label and input */
+    font-size: 1rem;
+    color: #003366; /* Matches the dark blue tone */
+    font-weight: bold; /* Makes labels stand out */
+}
+
+/* Form group styling for spacing */
+.form-group {
+    margin-bottom: 15px; /* Space between each input group */
+}
+
+/* Gender options styling */
+.gender-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gender-options label {
+    margin: 0; /* Reset margin for inline options */
+    font-size: 0.9rem;
+    color: #003366;
+}
+
+.gender-options input {
+    margin-right: 5px; /* Space between radio button and label */
+    transform: scale(1); /* Ensures buttons are visible */
+}
+
+/* Add spacing between form sections */
+.form-container .form-section {
+    margin-bottom: 20px;
+}
+
+/* Success/Error messages */
+.form-container .message {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: green; /* Example success message color */
+}
+
+.form-container .message.error {
+    color: red; /* Example error message color */
+}
+
+/* Subtle animation for focus */
+@keyframes focus-highlight {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+    }
+}
+
+input:focus {
+    animation: focus-highlight 1.5s ease-in-out;
+}
+

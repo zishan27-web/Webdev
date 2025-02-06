@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="CreateBlog.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo">
+                    <a href="HomePage.html">
+                        <img src="assets/logo.png" alt="Logo">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog-container">
+        <h2>Create Your Blog</h2>
+
+        <form id="blogForm">
+            <label for="blogTitle">Title:</label>
+            <input type="text" id="blogTitle" placeholder="Enter your blog title" required>
+
+            <label for="blogContent">Write your blog:</label>
+            <textarea id="blogContent" placeholder="Start writing here..." required></textarea>
+
+            <!-- <label for="blogImage">Upload an image:</label> -->
+            <label for="imageUpload">Upload an image:</label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <!-- <input type="file" id="blogImage" accept="image/*"> -->
+
+            <div class="image-preview">
+                <img id="previewImage" src="" alt="Image Preview" style="display: none;">
+            </div>
+
+            <button type="submit" class="submit-button">Submit Blog</button>
+        </form>
+
+        <!-- <div id="previewSection" class="preview">
+            <h3>Preview:</h3>
+            <h4 id="previewTitle"></h4>
+            <p id="previewContent"></p> -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Website | All rights reserved.</p>
+    </footer>
+
+    <script src="CreateBlog.js"></script>
+</body>
+
+</html>

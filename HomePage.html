@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="HomePage.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Logo">
+                </div>
+                <ul>
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+                    <button><a href="SignIn.html">Sign In</a></button>
+                    <button><a href="SignUp.html">Sign Up</a></button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <img width="100px" src="assets/hero_img.png" alt="Hero Image" loading="lazy">
+            </div>
+            <div class="hero-button">
+                <div class="separation"></div>
+                <button class="cta-button" onclick="location.href='CreateBlog.html'">
+                    Start Posting Your Own Blogs
+                </button>
+            </div>
+            
+        </section>
+
+
+        <section class="blogs">
+            <h2 class="blogs-heading">Latest Blogs</h2>
+            <div class="blog-grid">
+                <div class="blog-card">Blog 1</div>
+                <div class="blog-card">Blog 2</div>
+                <div class="blog-card">Blog 3</div>
+                <div class="blog-card">Blog 4</div>
+                <div class="blog-card">Blog 5</div>
+                <div class="blog-card">Blog 6</div>
+                <div class="blog-card">Blog 7</div>
+                <div class="blog-card">Blog 8</div>
+            </div>
+            <div class="view-more">
+                <button id="viewMoreBtn">
+                    <span>View more</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 24 24">
+                        <g data-name="Double down">
+                            <path d="M12 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 14.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4A1 1 0 0 1 12 17z" style="fill:#ffffff"/>
+                            <path d="M12 13a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 12 13z" style="fill:#ffffff"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div class="separation"></div>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2025 Your Website | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="HomePage.js"></script>
+</body>
+
+</html>
