@@ -21,26 +21,57 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-});
-// Get the dark mode toggle button
-const darkModeToggle = document.getElementById("darkModeToggle");
 
-// Check if dark mode is enabled in local storage
-if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark-mode");
-    darkModeToggle.innerText = "☀️ Light Mode";
-}
-
-// Toggle dark mode on button click
-darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("darkMode", "enabled");
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
         darkModeToggle.innerText = "☀️ Light Mode";
-    } else {
-        localStorage.setItem("darkMode", "disabled");
-        darkModeToggle.innerText = "🌙 Dark Mode";
     }
-});
 
+    darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+            darkModeToggle.innerText = "☀️ Light Mode";
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+            darkModeToggle.innerText = "🌙 Dark Mode";
+        }
+    });
+
+    // Image Carousel with Arrow Key Navigation
+    const carouselImages = [
+        "assets/image1.jpg",
+        "assets/image2.jpg",
+        "assets/image3.jpg",
+        "assets/image4.jpg"
+    ];
+
+    let currentImageIndex = 0;
+    const carouselElement = document.querySelector(".carousel-image");
+
+    function updateCarousel() {
+        carouselElement.src = carouselImages[currentImageIndex];
+    }
+
+    // Auto Change Images every 3 seconds
+    setInterval(() => {
+        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+        updateCarousel();
+    }, 3000);
+
+    // Keyboard Navigation (Left & Right Arrow Keys)
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+        } else if (event.key === "ArrowLeft") {
+            currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+        }
+        updateCarousel();
+    });
+
+    // Initial load
+    updateCarousel();
+});
