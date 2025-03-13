@@ -1,131 +1,396 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="HomePage.css">
-</head>
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
 
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navdiv">
-                <div class="logo">
-                    <img src="assets/logo.png" alt="Logo">
-                </div>
-                <ul>
-                    <li><a href="HomePage.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
-                    <button><a href="SignIn.html">Sign In</a></button>
-                    <button><a href="SignUp.html">Sign Up</a></button>
-                </ul>
-            </div>
-        </nav>
-    </header>
+.navbar {
+    background: linear-gradient(120deg, #00458a, #001a4d);
+    padding: 0px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <main>
-        <section class="hero">
-            <div class="hero-image">
-                <!-- <img width="100px" src="assets/hero_img.png" alt="Hero Image" loading="lazy"> -->
-                <img src="assets/image1.jpg" alt="Carousel Image" class="carousel-image">
-            </div>
-            <div class="hero-button">
-                <div class="separation"></div>
-                <button class="cta-button" onclick="location.href='CreateBlog.html'">
-                    Start Posting Your Own Blogs
-                </button>
-            </div>
-            
-        </section>
+.navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
 
+.logo img {
+    width: 225px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-        <section class="blogs">
-            <h2 class="blogs-heading">Latest Blogs</h2>
-            <div class="blog-grid">
-                <div class="blog-card">Blog 1</div>
-                <div class="blog-card">Blog 2</div>
-                <div class="blog-card">Blog 3</div>
-                <div class="blog-card">Blog 4</div>
-                <div class="blog-card">Blog 5</div>
-                <div class="blog-card">Blog 6</div>
-                <div class="blog-card">Blog 7</div>
-                <div class="blog-card">Blog 8</div>
-            </div>
-            <div class="view-more">
-                <button id="viewMoreBtn">
-                    <span>View more</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 24 24">
-                        <g data-name="Double down">
-                            <path d="M12 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 14.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4A1 1 0 0 1 12 17z" style="fill:#ffffff"/>
-                            <path d="M12 13a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 12 13z" style="fill:#ffffff"/>
-                        </g>
-                    </svg>
-                </button>
-            </div>
-        </section>
-    </main>
+.navdiv ul {
+    display: flex;
+    padding: 0px 10px;
+    list-style: none;
+    gap: 20px;
+}
 
-    <div class="separation"></div>
+ul li {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
 
-    <footer>
-        <div class="footer-container">
-          
-            <div class="footer-section about">
-                <h3>About Us</h3>
-                <p>Welcome to our college blogging platform! Here, students and faculty share ideas, research, and campus stories.</p>
-            </div>
+ul li:hover {
+    color: #FF6F61;
+    transform: translateY(-3px);
+}
+
+.dark-mode-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dark-mode-floating:hover {
+    background-color: #E05C4F;
+    transform: scale(1.1);
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .navbar {
+    background: linear-gradient(120deg, #222, #111);
+}
+
+.dark-mode .blog-grid {
+    background-color: #333;
+}
+
+.dark-mode .blog-card {
+    background: linear-gradient(120deg, #444, #222);
+}
+
+.dark-mode .view-more button {
+    background-color: #FF6F61;
+}
+
+.dark-mode .view-more button:hover {
+    background-color: #E05C4F;
+}
+
+.dark-mode footer {
+    background-color: #222;
+}
+
+.navdiv a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar button:hover {
+    background-color: #E05C4F;
+    transform: scale(1.05);
+}
+
+.navbar button a {
+    text-decoration: none;
+    color: white;
+}
+
+.hero {
+    position: relative;
+    background-color: #D9D9D9;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 40vh;
     
+}
 
-            <div class="footer-section links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="HomePage.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
-            </div>
-    
-    
-            <div class="footer-section contact">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto: regis@iiests.ac.in"> regis@iiests.ac.in</a></p>
-                <p>Phone:  +91 (033) 2668 4561 to 63</p>
-                <p>Address: P.O. Botanic Garden, Howrah - 711 103, West Bengal, India</p>
-            </div>
-    
-            <div class="footer-section newsletter">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Get the latest blog updates and news straight to your inbox.</p>
-                <form action="#">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-    
+.hero-image img {
+    width: 40%;
+    height: 40vh;
+    object-fit: fill;
+    border-radius: 8px;
+    box-shadow: #000000;
+    border: 3px solid black; 
+}
 
-            <div class="footer-section social">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
-                    <!-- <a href="#"><img src="assets/linkedin.svg" alt="LinkedIn"></a> -->
-                </div>
-            </div>
-        </div>
+.separation {
+    height: 5px;
+    background-color: #003366;
+}
+
+.hero-button {
+    background-color: #D9D9D9;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #E05C4F;
+    transform: scale(1.05);
+}
+
+.blogs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    width: 100%;
+    height: auto;
+}
+
+.blog-grid {
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: white;
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    margin: 10px;
+    width: 70vw;
+    gap: 15px;
+}
+
+.blog-card {
+    background: linear-gradient(120deg, #00458a, #001a4d);
+    color: white;
+    width: 93%;
+    height: 40vh;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.view-more button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.view-more button svg {
+    transition: transform 0.3s ease;
+}
+
+.view-more button:hover svg {
+    transform: translateX(3px);
+}
+
+.view-more:hover {
+    color: #FF6F61;
+    transform: translateY(-3px);
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(120deg, #00458a, #001a4d);
+    color: white;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #FF6F61;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 300px;
+    margin: auto;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-weight: 400;
+}
+
+.footer-section ul li a:hover {
+    color: #FF6F61;
+}
+
+.footer-section.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    width: 80%;
+    outline: none;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.footer-section.newsletter button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-section.newsletter button:hover {
+    background-color: #E05C4F;
+    transform: scale(1.05);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background: #001a4d;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navdiv {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .navdiv ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar button {
+        width: 100%;
+        text-align: center;
+    }
+    main .box-third {
+        height: auto;
+        padding: 20px;
+    }
+    .third {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .logo img {
+        width: 200px;
+    }
+    .navbar button {
+        font-size: 14px;
+    }
+    main .heading {
+        font-size: 20px;
+    }
+    .third {
+        grid-template-columns: 1fr;
+    }
     
-        <div class="footer-bottom">
-            <p>&copy; 2025 College Blog | All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="HomePage.js"></script>
-</body>
-
-</html>
-
+}
