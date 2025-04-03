@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="HomePage_dashBoard.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Logo">
+                </div>
+                <ul>
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+                    <li class="profile-section">
+                        <div class="profile-container" id="profileContainer">
+                            <img src="assets/default-profile.png" alt="Profile" class="profile-pic">
+                            <span class="username" id="username-display"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/default-profile.png" alt="Profile" class="sidebar-profile-pic">
+            <span class="sidebar-username" id="sidebar-username"></span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#"><i class="fas fa-user"></i> My Profile</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> My Blogs</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+            <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay for sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <!-- <img width="100px" src="assets/hero_img.png" alt="Hero Image" loading="lazy"> -->
+                <img src="assets/image1.jpg" alt="Carousel Image" class="carousel-image">
+            </div>
+            <div class="hero-button">
+                <div class="separation"></div>
+                <button class="cta-button" onclick="location.href='CreateBlog.html'">
+                    Start Posting Your Own Blogs
+                </button>
+            </div>
+            
+        </section>
+
+
+        <section class="blogs">
+            <h2 class="blogs-heading">Latest Blogs</h2>
+            <div class="blog-grid">
+                <div class="blog-card">Blog 1</div>
+                <div class="blog-card">Blog 2</div>
+                <div class="blog-card">Blog 3</div>
+                <div class="blog-card">Blog 4</div>
+                <div class="blog-card">Blog 5</div>
+                <div class="blog-card">Blog 6</div>
+                <div class="blog-card">Blog 7</div>
+                <div class="blog-card">Blog 8</div>
+            </div>
+            <div class="view-more">
+                <button id="viewMoreBtn">
+                    <span>View more</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25px" viewBox="0 0 24 24">
+                        <g data-name="Double down">
+                            <path d="M12 17a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 14.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4A1 1 0 0 1 12 17z" style="fill:#ffffff"/>
+                            <path d="M12 13a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L12 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 12 13z" style="fill:#ffffff"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div class="separation"></div>
+
+    <footer>
+        <div class="footer-container">
+          
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Welcome to our college blogging platform! Here, students and faculty share ideas, research, and campus stories.</p>
+            </div>
+    
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+    
+    
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto: regis@iiests.ac.in"> regis@iiests.ac.in</a></p>
+                <p>Phone:  +91 (033) 2668 4561 to 63</p>
+                <p>Address: P.O. Botanic Garden, Howrah - 711 103, West Bengal, India</p>
+            </div>
+    
+            <div class="footer-section newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest blog updates and news straight to your inbox.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+    
+
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="assets/twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+                    <!-- <a href="#"><img src="assets/linkedin.svg" alt="LinkedIn"></a> -->
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 College Blog | All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="HomePage_dashBoard.js"></script>
+</body>
+
+</html>
